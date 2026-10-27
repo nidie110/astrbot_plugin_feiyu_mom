@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+*.bak
+*.bak_*
+*.bak-*
+.venv/
+venv/
+.idea/
+.vscode/
+*.log
+data/
+.DS_Store
+Thumbs.db

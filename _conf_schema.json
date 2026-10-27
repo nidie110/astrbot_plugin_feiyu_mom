@@ -1,0 +1,97 @@
+{
+  "_sec_mom": {
+    "description": "=== 妈妈（DSH 助手）===",
+    "type": "text",
+    "invisible": true
+  },
+  "dsh_cmd": {
+    "description": "dsh 命令",
+    "type": "string",
+    "default": "dsh",
+    "hint": "默认走 PATH；找不到会自动试 DeepSeek Harness 自带的那份"
+  },
+  "work_dir": {
+    "description": "无头运行的工作目录",
+    "type": "string",
+    "default": "D:\\qqaibot\\astrbot",
+    "hint": "妈妈在这个目录下帮她看东西"
+  },
+  "mom_workspace": {
+    "type": "text",
+    "default": "D:\\qqaibot\\mom-workspace",
+    "description": "问妈妈专用工作区",
+    "hint": "dsh 的会话按工作目录分组。填一个专门的目录，她问妈妈产生的会话就会集中在 DSH 的同名分组里，不再散进「未分组」。留空则退回用 work_dir。"
+  },
+  "mom_reuse_session": {
+    "type": "bool",
+    "default": true,
+    "description": "复用同一个会话",
+    "hint": "开着的话，所有提问都进同一个 dsh 会话（列表里只有一条，妈妈也记得上下文）；关掉则每次提问新建一条。"
+  },
+  "mom_session_id": {
+    "type": "text",
+    "default": "",
+    "description": "会话 id（自动填写）",
+    "hint": "第一次问完会自动写进来，不用手填。清空它 = 下次提问新建一个会话。"
+  },
+  "credentials_file": {
+    "description": "凭据文件",
+    "type": "string",
+    "default": "~/.dsh/.credentials.yaml",
+    "hint": "读里面 refs.DEEPSEEK_API_KEY，注入给无头运行"
+  },
+  "timeout": {
+    "description": "一次问话最多等多久（秒）",
+    "type": "int",
+    "default": 240
+  },
+  "max_answer_chars": {
+    "description": "回答最多留多少字",
+    "type": "int",
+    "default": 400
+  },
+  "_sec_fallback": {
+    "description": "=== 兜底与规则 ===",
+    "type": "text",
+    "invisible": true
+  },
+  "enable": {
+    "description": "总开关",
+    "type": "bool",
+    "default": true
+  },
+  "min_gap_seconds": {
+    "description": "问一次最短间隔（秒）",
+    "type": "int",
+    "default": 20
+  },
+  "mom_umo": {
+    "description": "兜底转发地址",
+    "type": "string",
+    "default": "",
+    "hint": "妈妈没接上时，把问题发到这个会话"
+  },
+  "mom_ids": {
+    "description": "还有谁的回话算数",
+    "type": "string",
+    "default": "",
+    "hint": "QQ 号，逗号分隔；留空只有 AstrBot 管理员"
+  },
+  "_sec_brief": {
+    "type": "text",
+    "description": "=== 妈妈主动递纸条 ===",
+    "invisible": true
+  },
+  "briefing_enable": {
+    "type": "bool",
+    "description": "插件加载后让妈妈主动给她留一段使用说明",
+    "hint": "7 天内只递一次",
+    "default": true
+  },
+  "briefing_umo": {
+    "type": "string",
+    "description": "纸条发到哪个会话",
+    "hint": "留空则用 mom_umo；填 qq-napcat:FriendMessage:<主人QQ>",
+    "default": ""
+  }
+}

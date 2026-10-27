@@ -1,0 +1,17 @@
+name: astrbot_plugin_feiyu_mom
+display_name: 大肥鱼·问妈妈
+desc: 她搞不定的事直接问「妈妈」（DSH 里的助手）：一次无头运行，几秒钟就有答案，当场接住；妈妈没接上就把问题留给主人。
+version: 1.2.3
+author: 部署助手
+repo: "https://github.com/nidie110/astrbot_plugin_feiyu_mom"
+astrbot_version: ">=4.11.0"
+tags:
+  - 拟人
+  - 求助
+  - 私聊
+support_platforms:
+  - aiocqhttp
+help: |
+  她被卡住时会主动问妈妈——妈妈是 DSH 里的助手，能读这个项目，几秒回一句能照做的答案。
+  需要凭据：读 ~/.dsh/.credentials.yaml 里的 DEEPSEEK_API_KEY 给无头运行用。
+  妈妈没接上时，问题会转给主人，主人回了她下一轮能看到。
